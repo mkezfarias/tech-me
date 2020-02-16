@@ -1,0 +1,18 @@
+<h1 class= "h3 ml-3 mt-5 text-light" > Select a topic to start your call </h1>
+
+
+  <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+  <script>
+  callFrame = window.DailyIframe.createFrame({
+  showLeaveButton: true,
+  iframeStyle: {
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    width: '50%',
+    height: '100%'
+  }
+});
+
+  callFrame.join({ url: 'https://team54.daily.co/hello' })
+</script>
