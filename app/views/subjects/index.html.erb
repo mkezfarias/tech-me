@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>Subjects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Teacher</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.title %></td>
+        <td><%= subject.teacher %></td>
+        <td><%= link_to 'Show', subject, class: "text-white" %></td>
+        <td><%= link_to 'Edit', edit_subject_path(subject), class: "text-white" %></td>
+        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-white" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subject', new_subject_path, class: "text-white" %>
+</div>

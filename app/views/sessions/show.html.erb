@@ -1,12 +1,17 @@
-<h1 class= "h3 ml-3 mt-5 text-light" > Select a topic to start your call </h1>
+
+<h1 class= "h3 ml-3 my-5 text-light d-block d-md-none" > Select a topic to  <br> start your call </h1>
+<h1 class= "h3 ml-3 my-5 text-light d-md-block d-none" > Select a topic to start your call </h1>
 
 
-<%= link_to "Ruby Inject", sessions_show_path(bool: true), method: :post, class: "text-light" %>
-<%= link_to "Ruby Modules", sessions_show_path(bool: true), method: :post %>
-<%= link_to "Ruby Private methods", sessions_show_path(bool: true), method: :post %>
-<%= link_to "Ruby Procs", sessions_show_path(bool: true), method: :post %>
-<%= link_to "Ruby Yield", sessions_show_path(bool: true), method: :post %>
-<%= link_to "Javascript Regular Expressions", sessions_show_path(bool: true), method: :post %>
+  <ul cass="list-group list-group-flush bg-transparent">
+    <% @subjects.each do |subject| %>
+      <li class = "list-group-item bg-transparent col-5"> 
+        <%= link_to subject.title, sessions_show_path(subject: subject), method: :post, class: "text-light h5" %> 
+        <p class="text-warning mb-1"> Mentor: <%= subject.teacher %> </p> 
+      </li>
+    <% end %>
+  </ul>
+
 
 
 <% if @clicked %>
