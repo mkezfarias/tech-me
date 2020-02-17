@@ -1,0 +1,29 @@
+<h1 class= "h3 ml-3 mt-5 text-light" > Select a topic to start your call </h1>
+
+
+<%= link_to "Ruby Inject", sessions_show_path(bool: true), method: :post, class: "text-light" %>
+<%= link_to "Ruby Modules", sessions_show_path(bool: true), method: :post %>
+<%= link_to "Ruby Private methods", sessions_show_path(bool: true), method: :post %>
+<%= link_to "Ruby Procs", sessions_show_path(bool: true), method: :post %>
+<%= link_to "Ruby Yield", sessions_show_path(bool: true), method: :post %>
+<%= link_to "Javascript Regular Expressions", sessions_show_path(bool: true), method: :post %>
+
+
+<% if @clicked %>
+  <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+  <script>
+  callFrame = window.DailyIframe.createFrame({
+  showLeaveButton: true,
+  iframeStyle: {
+    position: 'fixed',
+    top: 0,
+    right: 0,
+    width: '50%',
+    height: '100%'
+  }
+});
+
+  callFrame.join({ url: 'https://team54.daily.co/hello' })
+</script>
+
+<% end %>
