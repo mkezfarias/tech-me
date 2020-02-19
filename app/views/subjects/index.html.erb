@@ -15,7 +15,9 @@
     <% @subjects.each do |subject| %>
       <tr>
         <td><%= subject.title %></td>
-        <td><%= subject.teacher %></td>
+        <td><%= subject.teacher %></td>        
+        <td><%= subject.room %></td>
+
         <td><%= link_to 'Show', subject, class: "text-white" %></td>
         <td><%= link_to 'Edit', edit_subject_path(subject), class: "text-white" %></td>
         <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-white" %></td>
@@ -27,4 +29,12 @@
 <br>
 
 <%= link_to 'New Subject', new_subject_path, class: "text-white" %>
+
+<h2 class= "mt-5"> Empty Rooms (not assigned to Subject or teacher)<h2>
+<%  @empty_rooms.each do |room| %>
+<div>
+<%= room -%> 
+</div> 
+<% end %>
+
 </div>
