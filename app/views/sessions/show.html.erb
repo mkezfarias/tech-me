@@ -1,7 +1,9 @@
+<%# This is the title, responsive for small screens and bigger screens %>
 
 <h1 class= "h3 ml-3 my-5 text-light d-block d-md-none" > Select a topic to  <br> start your call </h1>
 <h1 class= "h3 ml-3 my-5 text-light d-md-block d-none" > Select a topic to start your call </h1>
 
+<%# This is the list of the subjects that we got from the @subjects variable, and we are creating a table with all of them! %>
 
   <ul cass="list-group list-group-flush bg-transparent">
     <% @subjects.each do |subject| %>
@@ -13,11 +15,10 @@
   </ul>
 
 
-<script src= "https://code.jquery.com/jquery-2.2.4.min.js"> </script> 
-
 <% if @clicked %>
 <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
 <script>
+let myLink = '<%= (@start_session_link) %>'
 if (window.innerWidth <= 400) {
   callFrame = window.DailyIframe.createFrame({
   showLeaveButton: true,
@@ -29,7 +30,7 @@ if (window.innerWidth <= 400) {
       }
 });
 
-  callFrame.join({ url: 'https://team54.daily.co/hello' })
+  callFrame.join({ url: myLink })
 } else {
       callFrame = window.DailyIframe.createFrame({
       showLeaveButton: true,
@@ -42,7 +43,7 @@ if (window.innerWidth <= 400) {
       }
 });
 
-  callFrame.join({ url: 'https://team54.daily.co/hello' })
+  callFrame.join({ url: myLink })
 }
   
 </script>

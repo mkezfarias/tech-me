@@ -5,13 +5,15 @@ class SubjectsController < ApplicationController
   # GET /subjects.json
   def index
     @subjects = Subject.all
+    @all_rooms = all_rooms
+    @empty_rooms = all_rooms.map { |e_room| e_room unless Subject.find_by(room: "https://team54.daily.co/#{e_room}") }
   end
 
   # GET /subjects/1
   # GET /subjects/1.json
   def show
   end
-
+ 
   # GET /subjects/new
   def new
     @subject = Subject.new
@@ -24,12 +26,13 @@ class SubjectsController < ApplicationController
   # POST /subjects
   # POST /subjects.json
   def create
-    @subject = Subject.new(subject_params)
+    @subject = Subject.new(title: subject_params[:title], teacher: subject_params[:teacher] )
+    @subject.room = create_room(subject_params[:room])
 
     respond_to do |format|
       if @subject.save
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
-        format.json { render :show, status: :created, location: @subject }
+        format.json { render subjects_path, status: :created, location: @subject }
       else
         format.html { render :new }
         format.json { render json: @subject.errors, status: :unprocessable_entity }
@@ -42,8 +45,8 @@ class SubjectsController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(subject_params)
-        format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
-        format.json { render :show, status: :ok, location: @subject }
+        format.html { redirect_to subjects_path, notice: 'Subject was successfully updated.' }
+        format.json { render :index, status: :ok, location: @subject }
       else
         format.html { render :edit }
         format.json { render json: @subject.errors, status: :unprocessable_entity }
@@ -54,6 +57,8 @@ class SubjectsController < ApplicationController
   # DELETE /subjects/1
   # DELETE /subjects/1.json
   def destroy
+    daily_room_name = @subject.room[24..-1]
+    delete_room(daily_room_name)
     @subject.destroy
     respond_to do |format|
       format.html { redirect_to subjects_url, notice: 'Subject was successfully destroyed.' }
@@ -69,6 +74,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subject_params
-      params.require(:subject).permit(:title, :teacher)
+      params.require(:subject).permit(:title, :teacher, :room)
     end
 end
