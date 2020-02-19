@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   get '/sessions', to: 'sessions#show'
   # sends a post request to the show method in the sessions controller with a parameter passed from the view
   post '/sessions', to: 'sessions#show', as: :sessions_show
-  # sends a get request to the show method in the sessions controller with a parameter passed from the view0
-  get '/sessions/:subject', to: 'sessions#show'
+  # sends the root to the landig page
   root 'welcome#index'
 end
