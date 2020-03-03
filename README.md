@@ -1,4 +1,4 @@
-  <h3 align="center"> How to add live video chat to your website using Ruby on Rails </h3>
+  <h3> How to add live video chat to your website using Ruby on Rails </h3>
 
   <p align="center">
 
