@@ -1,4 +1,6 @@
-<p align="center">
+  <h3 align="center"> How to add live video chat to your website using Ruby on Rails </h3>
+
+  <p align="center">
 
 	
 In this project we create a rails app which embeds Daily.co video chats interface seamlessly. 
@@ -7,7 +9,6 @@ Includes room creation, deletion and count via the Daily.co API
 
 
 
-  <h3 align="center"> How to add live video chat to your website using Ruby on Rails </h3>
   <a href="https://medium.com/@mkezmkez/how-to-add-live-video-chat-to-your-website-using-ruby-on-rails-for-mobile-and-desktop-e9b6f869e9b">A brief tutorial to build one yourself can be found here: </a>
   </p>
 
