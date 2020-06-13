@@ -255,6 +255,6 @@ In a few steps, we were able to build a beautiful working app for video, Your ap
 
 If you want to take a look at my live demo with integrated API room creation, you can find it in https://tech-me.herokuapp.com/
 
-Let’s connect, I’m on twitter as twitter.com/mkezmkez.
+Let’s connect, I’m on [twitter](https://twitter.com/mkezmkez)
 
 Images under freepik.com free license.
