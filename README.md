@@ -1,4 +1,4 @@
-# How to add live video chat to your website using Ruby on Rails
+## How to add live video chat to your website using Ruby on Rails
 
 
 <img src=https://miro.medium.com/max/1378/1*1E7XyOwEvuF12uGR4etgRw.png>
