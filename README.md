@@ -227,6 +227,7 @@ if (window.innerWidth <= 400) {
       bottom: 0,
       width: '100%',
       height: '100%'
+      
       }
 });
 
