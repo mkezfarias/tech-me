@@ -3,7 +3,9 @@
 
 <img src=https://miro.medium.com/max/1378/1*1E7XyOwEvuF12uGR4etgRw.png>
 
-WebRTC allows peer-to-peer in-browser video calls relatively easy for advanced developers. Luckily, there are other options for beginners and intermediate level developers.
+WebRTC allows peer-to-peer in-browser video calls 'relatively easy' for advanced developers, and not so much for everyone else. 
+
+Luckily, there are other options for beginners and intermediate level developers, which we'll cover in this tutorial. 
 
 In this tutorial, we will be using the Daily.co API to create a ‘tutoring website for devs’ that will work with embedded video chat sessions in our Rails app. We are building from the ground-up, if you already have an app, you might want to start in step 6.
 
